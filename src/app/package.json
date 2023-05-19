@@ -1,0 +1,25 @@
+{
+  "name": "securityanalysis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app/security-analysis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexSilva-dev/Security-analisys.git"
+  },
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexSilva-dev/Security-analisys/issues"
+  },
+  "homepage": "https://github.com/AlexSilva-dev/Security-analisys#readme",
+  "dependencies": {
+    "csv-parser": "3.0.0",
+    "selenium-webdriver": "4.9.2",
+    "webdriverio": "8.10.2"
+    
+  }
+}

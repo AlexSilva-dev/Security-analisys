@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+
+  security-analysis:
+    build: .
+    #command: npm install
+    
+    command: [ "node", "src/app/security-analysis.js"]
+    container_name: security-analysis
+    volumes:
+      - ./resultado/:/security-analysis/resultado/
+    networks:
+      - mynet
+#    ports:
+#      - 3000:3000
+    depends_on:
+    - chrome
+
+
+  chrome:
+    image: selenium/standalone-chrome:latest
+    container_name: chrome
+    #command: #google-chrome --headless #--no-sandbox #--disable-gpu
+    ports:
+      - 4444:4444
+      - 7900:7900
+    volumes:
+      - /dev/shm:/dev/shm
+    shm_size: 2g
+    networks:
+      - mynet
+    stop_signal: SIGINT
+
+#
+
+
+#  chrome-teste:
+#    image: c0b0/chrome-stable
+#    container_name: chrome-teste
+#    ports:
+#      - 5555:5555
+
+#    networks:
+#      - mynet
+networks:
+  mynet:
