@@ -37,12 +37,12 @@ class AutoSecurityHeader {
         // Espera a porta do container docker ouvir para continuar o cod
         await this.waitForPort('chrome', 4444)
             .then(() => {
-                console.log('A porta 4444 está ouvindo. Continue com o código aqui.');
+                
                 // Escolhi não colocar nada aqui, mas o cod pode ser direto aqui dentro 
             })
             .catch((error) => {
                 // Se ocorrer um erro sai do programa
-                console.error('Ocorreu um erro:', error);
+                console.error('Ocorreu um erro ao se conectar com a porta do selenium (auto-security-header.js>run()):\n', error);
                 return;
             });
 
@@ -68,38 +68,7 @@ class AutoSecurityHeader {
             await driver.quit();
         }
 
-        /*
-        try {
-          // Configuração do driver do Chrome
-          const options = new chrome.Options();
-          options.addArguments('--headless'); // Executar em modo headless (sem interface gráfica)
-    
-          const driver = await new Builder()
-            .forBrowser('chrome')
-            .setChromeOptions(options)
-            .build();
-    
-            
-    
-          // Navega para o URL
-          await driver.get(url);
-    
-          // Aguarde até que a página esteja completamente carregada
-          await driver.wait(until.titleIs('Google'), 5000);
-    
-          // Tira uma captura de tela
-          await driver.takeScreenshot().then(function (data) {
-            const screenshotPath = `/security-analysis/resultado/SecurityHeader-${siteName}.png`;
-            require('fs').writeFileSync(screenshotPath, data, 'base64');
-            console.log('Screenshot salvo com sucesso em:', screenshotPath);
-          });
-    
-          // Encerra o driver
-          await driver.quit();
-        } catch (error) {
-          console.error('Ocorreu um erro:', error);
-        }
-        */
+
     }
 }
 

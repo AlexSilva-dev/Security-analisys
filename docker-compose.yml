@@ -2,11 +2,14 @@ version: '3.8'
 
 services:
 
-  security-analysis:
+  security-analysis: 
     build: .
     #command: npm install
     
-    command: [ "node", "src/app/security-analysis.js"]
+    command: node src/app/security-analysis.js
+    #node src/app/security-analysis.js
+    #wpscan --url https://tedsys.com.br --force --clear-cache 
+    #nikto -h https://tedsys.com.br  #node src/app/security-analysis.js
     container_name: security-analysis
     volumes:
       - ./resultado/:/security-analysis/resultado/
@@ -19,9 +22,9 @@ services:
 
 
   chrome:
-    image: selenium/standalone-chrome:latest
+    image: selenium/standalone-chrome:113.0
     container_name: chrome
-    #command: #google-chrome --headless #--no-sandbox #--disable-gpu
+    #command: sh -c "command > /dev/null 2>&1"
     ports:
       - 4444:4444
       - 7900:7900

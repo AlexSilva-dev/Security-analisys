@@ -1,0 +1,58 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+         WordPress Security Scanner by the WPScan Team
+                         Version 3.8.22
+                               
+       @_WPScan_, @ethicalhack3r, @erwan_lr, @firefart
+_______________________________________________________________
+
+[34m[i][0m Updating the Database ...
+[34m[i][0m Update completed.
+
+[32m[+][0m URL: https://tedsys.com.br/ [54.232.61.31]
+[32m[+][0m Started: Tue May 23 15:10:30 2023
+
+Interesting Finding(s):
+
+[32m[+][0m Headers
+ | Interesting Entries:
+ |  - server: openresty
+ |  - x-cache-key: httpsGETtedsys.com.br/
+ |  - content-security-policy: img-src * data:;
+ |  - referrer-policy: strict-origin
+ |  - expect-ct: enforce, max-age=300
+ |  - feature-policy: accelerometer 'none'; autoplay 'self'; camera 'none'; encrypted-media 'none'; fullscreen 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; midi 'none'; picture-in-picture 'none'; usb 'none';
+ |  - permissions-policy: accelerometer=(), autoplay=(self), camera=(), encrypted-media=(), fullscreen=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), midi=(), picture-in-picture=(), usb=()
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[32m[+][0m robots.txt found: https://tedsys.com.br/robots.txt
+ | Found By: Robots Txt (Aggressive Detection)
+ | Confidence: 100%
+
+[34m[i][0m The WordPress version could not be detected.
+
+[34m[i][0m The main theme could not be detected.
+
+
+[34m[i][0m No plugins Found.
+
+
+[34m[i][0m No Config Backups Found.
+
+[33m[!][0m No WPScan API Token given, as a result vulnerability data has not been output.
+[33m[!][0m You can get a free API token with 25 daily requests by registering at https://wpscan.com/register
+
+[32m[+][0m Finished: Tue May 23 15:13:12 2023
+[32m[+][0m Requests Done: 1271
+[32m[+][0m Cached Requests: 5
+[32m[+][0m Data Sent: 342.763 KB
+[32m[+][0m Data Received: 46.821 MB
+[32m[+][0m Memory used: 242.055 MB
+[32m[+][0m Elapsed time: 00:02:41
