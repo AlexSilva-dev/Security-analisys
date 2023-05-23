@@ -31,10 +31,10 @@ class Main {
 
 
 
-  executingCommand(command, message=true) {
+  executingCommand(command, showMessage=true) {
     try {
       const output = execSync(command);
-      if(message=true){
+      if(showMessage=true){
         console.log('Executado com sucesso.');
       }
     } catch (error) {
@@ -72,8 +72,9 @@ class Main {
           objAutoSecurityHeader.run(url, name);
           console.log("\n\n");
         });
-        console.log(GREEN + "Execução finalizada com sucesso, os resultados foram gerandos na pasta ../resultados."+RESET);
-        //console.log(`\t\t${RED}Aperte 'ctrl + C' para fechar terminal ${RESET}`);
+        console.log(GREEN + "Execução finalizada com sucesso, os resultados foram gerandos na pasta ../resultados.\n"+RESET);
+        console.log(`${GREEN}Execute o comando "docker container stop chrome" para o container do selenium.${RESET} ALTAMENTE RECOMENDADO APÓS O USO DESSA APLICAÇÃO.`);
+        console.log(`${RED}Execute o comando "docker image prune -a --force" PARA APAGAR TODAS AS IMAGENS DOCKER (atenção nesse comando, se não tiver interesse em apagar a aplicação Security Analysis ou se tiver usando o docker para outras finalidades  NÃO EXECUTA ESSE COMANDO).${RESET}`);
         this.executingCommand(`chmod -R 777 ${PATH_RESULT}`, false)
       })
       .catch((error) => {
